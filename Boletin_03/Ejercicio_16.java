@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class Ejercicio_16 {
     public static void main(String[] args) {
 
-        Consola.iniciar();   //Para mostral bien €.
+        //Consola.iniciar();   //Para mostral bien €.
 
         Scanner scanner = new Scanner(System.in);
         //Requisito 1: Menú y Selección del Pase (Uso obligatorio de 'switch')
@@ -45,6 +45,7 @@ public class Ejercicio_16 {
                 break;
             default:
                 System.out.println("Opción de pase no válida. Fin del programa");
+                scanner.close();
                 return; //Aquí se termina el programa
         }
 
@@ -54,6 +55,7 @@ public class Ejercicio_16 {
 
         if (edad < 0 || edad >120){
             System.out.println("Edad no válida. Fin del programa");
+            scanner.close();
             return;
         }
 
@@ -66,6 +68,7 @@ public class Ejercicio_16 {
             System.out.println("-------------------------------------------");
             System.out.printf("Importe final:                 %.2f €%n", 0.0);
             System.out.println("===========================================");
+            scanner.close();
             return;
         }
 
@@ -112,6 +115,7 @@ public class Ejercicio_16 {
                 break;
             default:
                 System.out.println("Día no válido. Fin del programa.");
+                scanner.close();
                 return;
         }
 
@@ -127,6 +131,7 @@ public class Ejercicio_16 {
             familia = "No";
         }else {
             System.out.println("Respuesta no válida. Fin del programa.");
+            scanner.close();
             return;
         }
 
@@ -140,6 +145,9 @@ public class Ejercicio_16 {
         System.out.println("-------------------------------------------");
         System.out.printf("Importe final:              %.2f €%n", precio);
         System.out.println("===========================================");
+
+        scanner.close();
     
     }
+    
 }
