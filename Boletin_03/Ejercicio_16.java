@@ -44,7 +44,7 @@ public class Ejercicio_16 {
                 precioBase = 80.00;
                 break;
             default:
-                System.out.println("Opción de pase no válida. Fin del programa");
+                System.out.println("Opción de pase no válida. Fin del programa.");
                 scanner.close();
                 return; //Aquí se termina el programa
         }
@@ -54,20 +54,20 @@ public class Ejercicio_16 {
         int edad = scanner.nextInt();
 
         if (edad < 0 || edad >120){
-            System.out.println("Edad no válida. Fin del programa");
+            System.out.println("Edad no válida. Fin del programa.");
             scanner.close();
             return;
         }
 
         //Bebé: precio gratis, ticker directo y fin ( sin pedir día ni familia numerosa.)
         if (edad < 4){
-            System.out.println("-------------TICKET MEDAC PARK-------------");
+            System.out.println("------------------TICKET MEDAC PAR-----------------");
             System.out.printf("Pase:                       %s%n", nombrePase);
-            System.out.printf("Precio base:            %.2f €%n", precioBase);
-            System.out.println("Categoría de edad:  Bebé (<4 años) - GRATIS");
+            System.out.printf("Precio base:                %.2f €%n", precioBase);
+            System.out.println("Categoría de edad:          Bebé (<4 años) - GRATIS");
             System.out.println("-------------------------------------------");
-            System.out.printf("Importe final:                 %.2f €%n", 0.0);
-            System.out.println("===========================================");
+            System.out.printf("Importe final:              %.2f €%n", 0.0);
+            System.out.println("===================================================");
             scanner.close();
             return;
         }
@@ -75,8 +75,9 @@ public class Ejercicio_16 {
         double precio = precioBase;
         String categoriaEdad;
 
-        if (edad < 12){
+        if (edad <= 12){
             categoriaEdad = "Infantil (-25%)";
+            precio = precio * 0.75;
 
         }else if (edad <= 64) {
             categoriaEdad = "Adulto (sin descuento)";
@@ -136,15 +137,15 @@ public class Ejercicio_16 {
         }
 
         //Requisito 5: Emisión y Formato del Ticket Final
-        System.out.println("-------------TICKET MEDAC PARK-------------");
+        System.out.println("-----------------------TICKET MEDAC PARK-----------------------");
         System.out.printf("Pase:                       %s%n", nombrePase);
-        System.out.printf("Precio base:            %.2f €%n", precioBase);
-        System.out.printf("Categoría de edad:       %s%n", categoriaEdad);
-        System.out.printf("Ajuste por día:              %s%n", ajusteDia);
-        System.out.printf("Familia numerosa:              %s%n", familia);
-        System.out.println("-------------------------------------------");
+        System.out.printf("Precio base:                %.2f €%n", precioBase);
+        System.out.printf("Categoría de edad:          %s%n", categoriaEdad);
+        System.out.printf("Ajuste por día:             %s%n", ajusteDia);
+        System.out.printf("Familia numerosa:           %s%n", familia);
+        System.out.println("---------------------------------------------------------------");
         System.out.printf("Importe final:              %.2f €%n", precio);
-        System.out.println("===========================================");
+        System.out.println("===============================================================");
 
         scanner.close();
     
